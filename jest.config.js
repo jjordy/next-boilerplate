@@ -16,6 +16,12 @@ module.exports = {
   },
   transformIgnorePatterns: ["/node_modules/", "^.+\\.module\\.(css|sass|scss)$"],
   moduleNameMapper: {
-    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+    "^pages/(.*)$": "<rootDir/pages/$1",
+    "^pages": "<rootDir>/pages/index.tsx",
+    "^hooks/(.*)$": "<rootDir>/hooks/$1",
+    "^utils": "<rootDir>/utils/index.ts",
+    "^utils/(.*)$": "<rootDir>/utils/$1",
+    "^shared/(.*)$": "<rootDir>/shared/$1"
   }
 };

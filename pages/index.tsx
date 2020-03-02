@@ -6,6 +6,7 @@ export default function IndexPage() {
   const [counter, setCounter] = useState(1)
   const { width,  height } = useWindowSize()
   useInterval(() => setCounter(counter + 1), 1000)
+
   return (
     <div className="container mx-auto pt-8">
       <div className="border shadow-xl p-4 rounded">

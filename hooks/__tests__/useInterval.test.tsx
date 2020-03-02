@@ -7,6 +7,6 @@ test("Should call the function on the interval passed", async () => {
   const mockCallback = jest.fn();
   renderHook(() => useInterval(mockCallback, 250));
   expect(mockCallback).not.toBeCalled();
-  jest.advanceTimersByTime(251);
+  jest.advanceTimersByTime(250);
   expect(mockCallback).toBeCalled();
 });

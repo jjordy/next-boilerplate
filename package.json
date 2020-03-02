@@ -20,11 +20,10 @@
       "pre-commit": "yarn run test && yarn run lint:fix"
     }
   },
-  "keywords": [],
+  "keywords": ["nextjs", "typescript", "tailwindcss", "jest", "testing-library/react"],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    
     "@sentry/browser": "^5.9.1",
     "@sentry/node": "^5.12.3",
     "@zeit/next-source-maps": "^0.0.3",

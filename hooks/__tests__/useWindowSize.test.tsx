@@ -2,7 +2,7 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import useWindowSize from "hooks/useWindowSize";
 
 test("Should call the function on the interval passed", async () => {
-  expect.assertions(4)
+  expect.assertions(4);
   const { result } = renderHook(() => useWindowSize());
   // default sizes set by jest / jsdom
   expect(result.current.width).toBe(1024);

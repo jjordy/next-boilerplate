@@ -1,3 +1,3 @@
 export interface MyType {
-  [key: string]: any
+  [key: string]: any;
 }

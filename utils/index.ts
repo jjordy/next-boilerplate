@@ -1,5 +1,3 @@
-
-
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
   threshold: number = 250,

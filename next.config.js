@@ -1,6 +1,6 @@
 require("dotenv").config();
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-const withSourceMaps = require('@zeit/next-source-maps');
+const withSourceMaps = require("@zeit/next-source-maps");
 
 module.exports = withSourceMaps({
   serverRuntimeConfig: {},

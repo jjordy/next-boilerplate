@@ -1,5 +1,5 @@
-import React from 'react'
-import * as Sentry from '@sentry/node'
+import React from "react";
+import * as Sentry from "@sentry/node";
 import "css/tailwind.css";
 import "css/styles.css";
 
@@ -8,8 +8,6 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN
 });
 
-export default function App ({ Component, pageProps, err }) {
-  return (
-    <Component {...pageProps} err={err} />
-  )
+export default function App({ Component, pageProps, err }) {
+  return <Component {...pageProps} err={err} />;
 }

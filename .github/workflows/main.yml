@@ -1,0 +1,14 @@
+name: Test App
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.2
+      with:
+        jestArgs: -ci

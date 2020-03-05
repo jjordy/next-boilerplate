@@ -9,7 +9,7 @@ describe("Nextjs Boilerplate", () => {
   });
   it("Should have a footer", () => {
     cy.get("div.text-white > p").should("contain.text", "Jordan Addison 2020");
-  })
+  });
   describe("Counter Component", () => {
     it("Should start at 1", () => {
       cy.dataCy("counter-value").should("contain.text", "1");
@@ -17,16 +17,15 @@ describe("Nextjs Boilerplate", () => {
     it("Should count up", () => {
       cy.wait(1000).then(() => {
         cy.dataCy("counter-value").should("contain.text", "2");
-      })
+      });
     });
     it("Should reset the counter to 1", () => {
       cy.wait(1000).then(() => {
         cy.dataCy("counter-value").should("contain.text", "2");
         cy.get("button.bg-blue-800").click();
         cy.dataCy("counter-value").should("contain.text", "1");
-      })
-
-    })
+      });
+    });
   });
 
   describe("Window Size Component", () => {

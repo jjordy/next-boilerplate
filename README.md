@@ -1,6 +1,6 @@
 # Nextjs Boilerplate
 
-This is a nextjs app pre setup with [Typescript](https://www.typescriptlang.org/), [Sentry](https://sentry.io), [Jest](https://jestjs.io), [cypress](https://cypress.io), [Tailwind CSS](https://tailwindcss.com/) and a few common hooks
+This is a nextjs app pre setup with [Typescript](https://www.typescriptlang.org/), [Sentry](https://sentry.io), [Jest](https://jestjs.io), [Cypress](https://cypress.io), [Tailwind CSS](https://tailwindcss.com/) and a few common hooks
 
 ## Getting Started
 

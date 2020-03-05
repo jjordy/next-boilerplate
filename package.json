@@ -13,6 +13,7 @@
     "lint:fix": "prettier --write **/*.{js,ts,tsx}",
     "start": "next start",
     "test": "jest",
+    "test:all": "jest && cypress run",
     "test:ci": "jest --ci",
     "test:dev": "jest --watch",
     "test:coverage": "jest --coverage"

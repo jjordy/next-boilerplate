@@ -20,33 +20,45 @@ rm -rf .git
 yarn && yarn run dev
 ```
 
-#### Commands
+## Commands
 
-```
-  Running
+##### Running
 
-  npm run dev - run the dev server
-  npm run build - build the production bundle
-  npm start - start the production server
-
-  Linting
-
-  npm run lint - run prettier
-  npm run lint:fix - run prettier and automatically fix issues.
-
-  Unit Testing
-
-  npm run test - run the test
-  npm run test:dev - run the test in watch mode
-  npm run test:ci - run the test on continuous integration
-
-  Integration / e2e Testing
-
-  npm run cypress:open - run cypress
-  npm run cypress:run - run cypress headless (For CI)
+```bash
+  npm run dev # run the dev server
+  npm run build # build the production bundle
+  npm start # start the production server
 ```
 
-#### Hooks
+##### Linting
+
+```bash
+  npm run lint # run prettier
+  npm run lint:fix # run prettier and automatically fix issues.
+```
+
+##### Unit Testing
+
+```bash
+  npm run test # run the test
+  npm run test:dev # run the test in watch mode
+  npm run test:ci # run the test on continuous integration
+```
+
+##### Integration / e2e Testing
+
+```bash
+  npm run cypress:open # run cypress
+  npm run cypress:run  # run cypress headless (For CI)
+```
+
+##### Run all tests
+
+```bash
+  npm run test:all # run jest & cypress
+```
+
+## Hooks
 
 ```
   // run something on a react safe interval
@@ -56,9 +68,9 @@ yarn && yarn run dev
   const { width, height } = useWindowSize();
 ```
 
-#### Github Action
+## Github Action
 This project includes a github action to run your tests when you check your code into master the action can be edited in ```.github/workflows/main.yml```
 
-#### Maintainers
+## Maintainers
 
 * Jordan Addison

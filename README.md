@@ -60,12 +60,12 @@ yarn && yarn run dev
 
 ## Hooks
 
-```
+```typescript
   // run something on a react safe interval
-  useInterval(function, delay);
+  useInterval(function:void, delay:number);
 
   // get the window height and width (throttled)
-  const { width, height } = useWindowSize();
+  const { width, height }: { width: number, height: number } = useWindowSize();
 ```
 
 ## Github Action

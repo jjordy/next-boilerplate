@@ -6,7 +6,7 @@ module.exports = withSourceMaps({
   serverRuntimeConfig: {},
   publicRuntimeConfig: {},
   env: {
-    SENTRY_DSN: ""
+    SENTRY_DSN: "",
   },
   webpack: (config, options) => {
     if (!options.isServer) {
@@ -18,5 +18,5 @@ module.exports = withSourceMaps({
       config.resolve.plugins = [new TsconfigPathsPlugin()];
     }
     return config;
-  }
+  },
 });

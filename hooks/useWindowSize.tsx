@@ -2,19 +2,19 @@ import React from "react";
 import { throttle } from "utils";
 
 const events = new Set<() => void>();
-const onResize = () => events.forEach(fn => fn());
+const onResize = () => events.forEach((fn) => fn());
 
 const useWindowSize = (options: { throttleMs?: number } = {}) => {
   const { throttleMs = 100 } = options;
   const [size, setSize] = React.useState({
     width: typeof window !== "undefined" && window.innerWidth,
-    height: typeof window !== "undefined" && window.innerHeight
+    height: typeof window !== "undefined" && window.innerHeight,
   });
 
   const handle = throttle(() => {
     setSize({
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     });
   }, throttleMs);
 

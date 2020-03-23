@@ -3,9 +3,7 @@ describe("Nextjs Boilerplate", () => {
     cy.visit("http://localhost:3000");
   });
   it("Should have a header for the page.", () => {
-    cy.get("h1")
-      .contains("My Nextjs Boilerplate.")
-      .should("exist");
+    cy.get("h1").contains("My Nextjs Boilerplate.").should("exist");
   });
   it("Should have a footer", () => {
     cy.get("div.text-white > p").should("contain.text", "Jordan Addison 2020");

@@ -4,7 +4,7 @@ export function throttle<T extends (...args: any[]) => void>(
   scope?: any
 ): T {
   let last: number, deferTimer: any;
-  return function(this: any) {
+  return function (this: any) {
     let context = scope || this;
 
     let now = Date.now(),
@@ -12,7 +12,7 @@ export function throttle<T extends (...args: any[]) => void>(
     if (last && now < last + threshold) {
       // hold on to it
       clearTimeout(deferTimer);
-      deferTimer = setTimeout(function() {
+      deferTimer = setTimeout(function () {
         last = now;
         func.apply(context, args);
       }, threshold);

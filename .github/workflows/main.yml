@@ -12,8 +12,6 @@ jobs:
       run: yarn
     - name: Run tests
       run: yarn test
-      with:
-        jestArgs: -ci
   cypress-run:
     runs-on: ubuntu-latest
     steps:

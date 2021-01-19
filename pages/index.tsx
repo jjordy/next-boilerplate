@@ -36,9 +36,19 @@ function TodoItem({ item }) {
 
   return (
     <div className="flex items-center mb-2">
-      <input type="text" value={item.name} onChange={editItemText} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"/>
+      <input
+        type="text"
+        value={item.name}
+        onChange={editItemText}
+        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      />
       <input type="checkbox" checked={item.isComplete} onChange={toggleItemCompletion} />
-      <button onClick={deleteItem} className="bg-red-500 px-2 py-1 rounded shadow-xl text-white font-black">X</button>
+      <button
+        onClick={deleteItem}
+        className="bg-red-500 px-2 py-1 rounded shadow-xl text-white font-black"
+      >
+        X
+      </button>
     </div>
   );
 }
@@ -72,8 +82,19 @@ function TodoItemCreator() {
 
   return (
     <div className="flex items-center mb-4">
-      <input type="text" value={inputValue} placeholder="What needs to be done?" onChange={onChange} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 rounded-r-none"/>
-      <button onClick={addItem} className="px-3 py-2 bg-indigo-600 rounded shadow-xl text-white font-black uppercase rounded-l-none">Add</button>
+      <input
+        type="text"
+        value={inputValue}
+        placeholder="What needs to be done?"
+        onChange={onChange}
+        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 rounded-r-none"
+      />
+      <button
+        onClick={addItem}
+        className="px-3 py-2 bg-indigo-600 rounded shadow-xl text-white font-black uppercase rounded-l-none"
+      >
+        Add
+      </button>
     </div>
   );
 }
@@ -83,7 +104,7 @@ export default function IndexPage() {
   return (
     <div className="container mx-auto max-w-3xl">
       <h1 className="text-6xl font-thin">Todo List</h1>
-      <hr className="mb-4"/>
+      <hr className="mb-4" />
       <TodoItemCreator />
       {todoList.map((todoItem) => (
         <TodoItem item={todoItem} key={todoItem.id} />

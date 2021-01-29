@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 const {
@@ -28,6 +29,11 @@ module.exports = {
     // outside of Vercel
     NEXT_PUBLIC_COMMIT_SHA: COMMIT_SHA,
   },
+=======
+const withSourceMaps = require("@zeit/next-source-maps");
+
+module.exports = withSourceMaps({
+>>>>>>> 59f7f28633a0ddbab468682b2362e9719afc885c
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
     // @sentry/node will run in a Node.js environment. @sentry/node will use

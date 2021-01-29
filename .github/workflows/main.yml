@@ -7,11 +7,11 @@ jobs:
   jest-run:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.2
-      with:
-        jestArgs: -ci
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run tests
+      run: yarn test
   cypress-run:
     runs-on: ubuntu-latest
     steps:

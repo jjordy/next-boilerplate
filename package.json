@@ -24,7 +24,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-<<<<<<< HEAD
     "@headlessui/react": "^1.4.1",
     "jotai": "^1.3.2",
     "next": "^11.1.2",
@@ -35,29 +34,13 @@
     "recoil": "^0.4.1",
     "shortid": "^2.2.16",
     "tailwindcss": "^2.2.9"
-=======
-    "@sentry/browser": "^5.30.0",
-    "@sentry/integrations": "^5.30.0",
-    "@sentry/node": "^5.30.0",
-    "@sentry/webpack-plugin": "^1.14.0",
-    "@zeit/next-source-maps": "0.0.4-canary.1",
-    "next": "^10.0.5",
-    "postcss": "^8.2.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "recoil": "^0.1.2",
-    "tailwindcss": "^2.0.2"
->>>>>>> e85aa56b6c08cd06f87181caf57e566f10e858a1
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@types/node": "^16.7.10",
     "@types/react": "^17.0.19",
     "autoprefixer": "^10.3.3",
     "cypress": "^8.3.1",
-    "postcss-import": "^14.0.2",
     "prettier": "^2.3.2",
-    "ts-loader": "^9.2.5",
     "typescript": "^4.4.2"
   },
   "peerDependencies": {

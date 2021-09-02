@@ -1,119 +1,38 @@
-import { useState } from "react";
-import { atom, useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
-
-const todoListState = atom({
-  key: "todoListState",
-  default: [],
-});
-
-function TodoItem({ item }) {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
-  const index = todoList.findIndex((listItem) => listItem === item);
-
-  const editItemText = ({ target: { value } }) => {
-    const newList = replaceItemAtIndex(todoList, index, {
-      ...item,
-      text: value,
-    });
-
-    setTodoList(newList);
-  };
-
-  const toggleItemCompletion = () => {
-    const newList = replaceItemAtIndex(todoList, index, {
-      ...item,
-      isComplete: !item.isComplete,
-    });
-
-    setTodoList(newList);
-  };
-
-  const deleteItem = () => {
-    const newList = removeItemAtIndex(todoList, index);
-
-    setTodoList(newList);
-  };
-
-  return (
-    <div className="flex items-center mb-2">
-      <input
-        type="text"
-        value={item.name}
-        onChange={editItemText}
-        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-      />
-      <input type="checkbox" checked={item.isComplete} onChange={toggleItemCompletion} />
-      <button
-        onClick={deleteItem}
-        className="bg-red-500 px-2 py-1 rounded shadow-xl text-white font-black"
-      >
-        X
-      </button>
-    </div>
-  );
-}
-
-function replaceItemAtIndex(arr, index, newValue) {
-  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
-}
-
-function removeItemAtIndex(arr, index) {
-  return [...arr.slice(0, index), ...arr.slice(index + 1)];
-}
-
-function TodoItemCreator() {
-  const [inputValue, setInputValue] = useState("");
-  const setTodoList = useSetRecoilState(todoListState);
-
-  const addItem = () => {
-    setTodoList((oldTodoList) => [
-      ...oldTodoList,
-      {
-        id: getId(),
-        name: inputValue,
-        isComplete: false,
-      },
-    ]);
-  };
-
-  const onChange = ({ target: { value } }) => {
-    setInputValue(value);
-  };
-
-  return (
-    <div className="flex items-center mb-4">
-      <input
-        type="text"
-        value={inputValue}
-        placeholder="What needs to be done?"
-        onChange={onChange}
-        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 rounded-r-none"
-      />
-      <button
-        onClick={addItem}
-        className="px-3 py-2 bg-indigo-600 rounded shadow-xl text-white font-black uppercase rounded-l-none"
-      >
-        Add
-      </button>
-    </div>
-  );
-}
+import { useAtom } from "jotai";
+import todoListState from "lib/state";
+import Head from "next/head";
+import TodoItemCreator from "shared/TodoCreator";
+import TodoItem from "shared/TodoItem";
 
 export default function IndexPage() {
-  const todoList = useRecoilValue(todoListState);
+  const [todoList] = useAtom(todoListState);
   return (
-    <div className="container mx-auto max-w-3xl">
-      <h1 className="text-6xl font-thin">Todo List</h1>
-      <hr className="mb-4" />
-      <TodoItemCreator />
-      {todoList.map((todoItem) => (
-        <TodoItem item={todoItem} key={todoItem.id} />
-      ))}
-    </div>
+    <>
+      <Head>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
+      </Head>
+      <div className="px-4 md:px-0 container mx-auto bg-white/50 max-w-4xl">
+        <div className="flex min-h-screen">
+          <div className="w-full md:px-16">
+            <h1 className="text-4xl font-thin uppercase text-white my-8">Todo List</h1>
+            <TodoItemCreator />
+            <div className="border-b border-gray-300 my-4" />
+            {todoList.map((todoItem) => (
+              <TodoItem item={todoItem} key={todoItem.id} />
+            ))}
+            <div
+              data-cy="no-todo-items-title"
+              className={`transition-all ease-in-out duration-200 my-4 ${
+                todoList.length === 0 ? "opacity-1" : "opacity-0"
+              }`}
+            >
+              <h3 className="text-gray-600 font-thin text-4xl text-center my-4">
+                Nothing to do... Enjoy your day
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
-}
-
-let id = 0;
-function getId() {
-  return id++;
 }

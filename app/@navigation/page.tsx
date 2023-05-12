@@ -4,9 +4,7 @@ import { twMerge } from "tailwind-merge";
 const containerStyles = [
   "flex",
   "h-24",
-  "bg-gradient-to-r",
-  "from-slate-900",
-  "via-slate-500",
+  "bg-black/40",
   "to-slate-700",
   "text-white",
   "items-center",

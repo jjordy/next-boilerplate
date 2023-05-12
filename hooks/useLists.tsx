@@ -18,7 +18,6 @@ export default function useLists() {
   };
   const editList = (values: List, index: number) =>
     setList((lists) => {
-      console.log(values, index);
       lists[index] = values;
     });
 

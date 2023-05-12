@@ -45,32 +45,6 @@ yarn && yarn run dev
   npm run test:ci # run the test on continuous integration
 ```
 
-##### Integration / e2e Testing
-
-```bash
-  npm run cypress:open # run cypress
-  npm run cypress:run  # run cypress headless (For CI)
-```
-
-##### Run all tests
-
-```bash
-  npm run test:all # run jest & cypress
-```
-
-## Hooks
-
-```typescript
-  // run something on a react safe interval
-  useInterval(function:void, delay:number);
-
-  // get the window height and width (throttled)
-  const { width, height }: { width: number, height: number } = useWindowSize();
-```
-
-## Github Action
-This project includes a github action to run your tests when you check your code into master the action can be edited in ```.github/workflows/main.yml```
-
 ## Maintainers
 
-* Jordan Addison
+- Jordan Addison

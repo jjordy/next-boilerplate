@@ -24,7 +24,10 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": [
+      "vitest/importMeta"
+    ]
   },
   "exclude": [
     "node_modules",

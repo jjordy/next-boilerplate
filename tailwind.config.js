@@ -1,20 +1,19 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["pages/**/*.tsx", "shared/**/*.tsx", "hooks/**/*.tsx"],
-  mode: 'jit',
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "pages/**/*.tsx",
+    "shared/**/*.tsx",
+    "hooks/**/*.tsx",
+    "components/**/*.tsx",
+    "app/**/*.tsx",
+  ],
   theme: {
     extend: {
-      colors: {
-        cyan: colors.cyan,
-        sky: colors.sky,
-        teal: colors.teal
-      },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
-      }
+        sans: [...defaultTheme.fontFamily.sans, "Inter var"],
+      },
     },
   },
   variants: {

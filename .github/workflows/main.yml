@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          install: npm install
-          build: npm run build
-          start: npm start
-  
+        uses: actions/setup-node@v3
+      - run: yarn install
+      - run: yarn run build

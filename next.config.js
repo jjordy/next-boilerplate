@@ -1,3 +1,2 @@
-module.exports = {
-  productionBrowserSourceMaps: true,
-};
+/** @type {import('next').NextConfig} */
+module.exports = {};

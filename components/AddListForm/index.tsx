@@ -7,6 +7,7 @@ import { twMerge } from "tailwind-merge";
 import Button from "shared/Button";
 import useLists from "hooks/useLists";
 import shortid from "shortid";
+import PlusIcon from "shared/icons/PlusIcon";
 
 const addTodoBtnStyles = ["px-6", "rounded-r-lg", "rounded-l-none"];
 
@@ -43,14 +44,7 @@ export default function AddListForm() {
           action={
             <Button type="submit" className={twMerge(addTodoBtnStyles)}>
               Add
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5 ml-2"
-              >
-                <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-              </svg>
+              <PlusIcon className="ml-2" />
             </Button>
           }
         />
